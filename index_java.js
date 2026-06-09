@@ -4,7 +4,7 @@ function getComputerChoice () {
    if (num <= 3){
     console.log("rock")
    }
-   else if (num >= 4 || num <= 5){
+   else if (num >= 4 && num <= 5){
     console.log("paper")
    }
    else{
