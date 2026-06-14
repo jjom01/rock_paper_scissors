@@ -32,7 +32,19 @@ function getHumanChoice (){
     }
 
 }
-getHumanChoice()
+getHumanChoice
 
 let humanScore = 0
 let computerScore = 0
+
+function playRound (humanChoice, computerChoice) {
+    if (humanChoice === "rock" && computerChoice === "rock"){
+        console.log("That is a tie")
+        console.log (humanScore, computerScore)
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound (humanSelection, computerSelection);
