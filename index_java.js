@@ -13,7 +13,6 @@ function getComputerChoice () {
    }
 
 }
-console.log(getComputerChoice())
 
 function getHumanChoice (){
 
@@ -42,7 +41,7 @@ let humanScore = 0
 let computerScore = 0
 
 function playRound (humanChoice, computerChoice) {
-    if (humanChoice === "rock" && computerChoice === "rock"){
+    if (humanChoice === computerChoice){
         console.log("That is a tie")
         console.log (humanScore, computerScore)
     }
