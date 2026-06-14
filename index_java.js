@@ -3,17 +3,17 @@ function getComputerChoice () {
    let num = Math.floor(Math.random() * 9) + 1; 
    console.log(num)
    if (num <= 3){
-    console.log("rock")
+    return("rock")
    }
    else if (num >= 4 && num <= 6){
-    console.log("paper")
+    return("paper")
    }
    else{
-    console.log("scissors")
+    return("scissors")
    }
 
 }
-getComputerChoice()
+console.log(getComputerChoice())
 
 function getHumanChoice (){
 
@@ -21,18 +21,22 @@ function getHumanChoice (){
 
     if (hc === "rock"){
         console.log("you picked ROCK")
+        return ("rock")
     }
     else if (hc === "paper"){
         console.log("you picked PAPER")
+        return ("paper")
     }
-    else if (hc === "scissors")
+    else if (hc === "scissors"){
         console.log("you picked SCISSORS")
+        return ("scissors")
+    }
     else if (hc !== "rock" || hc !== "paper" || hc !== "scissors") {
         console.log("try a valid option")
+        return "null"
     }
 
 }
-getHumanChoice
 
 let humanScore = 0
 let computerScore = 0
