@@ -1,14 +1,16 @@
 function getComputerChoice () {
 
    let num = Math.floor(Math.random() * 9) + 1; 
-   console.log(num)
    if (num <= 3){
+    console.log("Computer throws a rock at you.")
     return("rock")
    }
    else if (num >= 4 && num <= 6){
+    console.log("Computer gives u a paper cut")
     return("paper")
    }
    else{
+    console.log("Computer chops you with scissors")
     return("scissors")
    }
 
