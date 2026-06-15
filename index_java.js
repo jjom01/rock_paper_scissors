@@ -77,3 +77,13 @@ for (let i = 0; i  < loop; i++) {
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection)
 }
+
+if (humanScore > computerScore){
+    console.log(`You WIN!!! ${humanScore} points on top of a bot.`)
+}
+else if (humanScore < computerScore){
+    console.log(`You lose. AI will take your job now`)
+}
+else {
+    console.log("Hmmm an unexpected tie.")
+}
