@@ -41,9 +41,13 @@ let humanScore = 0
 let computerScore = 0
 
 function playRound (humanChoice, computerChoice) {
+    if (humanChoice === null){
+        console.log("Skipping this round. No valid choice was made.")
+        return
+    }
+
     if (humanChoice === computerChoice){
         console.log("That is a tie")
-        console.log (humanScore, computerScore)
     }
     else if 
     ((humanChoice === "rock" && computerChoice === "scissors") ||
@@ -52,15 +56,24 @@ function playRound (humanChoice, computerChoice) {
     {
         
         console.log(`You win this round. ${humanChoice.charAt(0).toUpperCase()}${humanChoice.slice(1)} beats ${computerChoice}`)
-        return(++humanScore, computerScore)
+        humanScore++
+        console.log (humanScore, computerScore)
     }
     else {
         console.log(`You lose this round. ${humanChoice} beats ${computerChoice}`)
-        return(humanScore, ++computerScore)
+        computerScore++
+        console.log (humanScore, computerScore)
     }
 }
 
+
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
-console.log(humanScore, computerScore)
 playRound (humanSelection, computerSelection);
+
+const loop = 4
+for (let i = 0; i  < loop; i++) {
+    getComputerChoice()
+    getHumanChoice()
+    playRound()
+}
