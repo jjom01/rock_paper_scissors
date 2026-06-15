@@ -67,7 +67,6 @@ function playRound (humanChoice, computerChoice) {
     console.log(`Current score ---> Human: ${humanScore} | Computer: ${computerScore}`)
 }
 
-playRound (humanSelection, computerSelection);
 
 const loop = 5
 for (let i = 0; i  < loop; i++) {
