@@ -67,15 +67,12 @@ function playRound (humanChoice, computerChoice) {
     console.log(`Current score ---> Human: ${humanScore} | Computer: ${computerScore}`)
 }
 
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 playRound (humanSelection, computerSelection);
 
 const loop = 5
 for (let i = 0; i  < loop; i++) {
     console.log(`-- -- ROUND ${i+1} -- --`)
-    getComputerChoice()
-    getHumanChoice()
-    playRound()
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection)
 }
