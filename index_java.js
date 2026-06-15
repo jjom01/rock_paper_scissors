@@ -62,8 +62,9 @@ function playRound (humanChoice, computerChoice) {
     else {
         console.log(`You lose this round. ${humanChoice} beats ${computerChoice}`)
         computerScore++
-        console.log (humanScore, computerScore)
     }
+
+    console.log(`Current score ---> Human: ${humanScore} | Computer: ${computerScore}`)
 }
 
 
@@ -71,7 +72,7 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 playRound (humanSelection, computerSelection);
 
-const loop = 4
+const loop = 5
 for (let i = 0; i  < loop; i++) {
     getComputerChoice()
     getHumanChoice()
