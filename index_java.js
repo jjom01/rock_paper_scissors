@@ -74,6 +74,7 @@ playRound (humanSelection, computerSelection);
 
 const loop = 5
 for (let i = 0; i  < loop; i++) {
+    console.log(`-- -- ROUND ${i+1} -- --`)
     getComputerChoice()
     getHumanChoice()
     playRound()
