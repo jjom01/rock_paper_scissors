@@ -43,6 +43,15 @@ body {
     font-family: 'PP Fraktion Mono', monospace;
 }
 
+.player_name{
+    margin: 0px;
+}
+
+.score{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .player_buttons{
     display: flex;
     flex-direction: row;
