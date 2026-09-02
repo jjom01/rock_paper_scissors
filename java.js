@@ -11,24 +11,54 @@ function getComputerChoice () {
         }
 }
 
+function getHumanChoice (){
+    if (hc === "rock"){
+        console.log("you picked ROCK")
+        return ("rock")
+    }
+    else if (hc === "paper"){
+        console.log("you picked PAPER")
+        return ("paper")
+    }
+    else if (hc === "scissors"){
+        console.log("you picked SCISSORS")
+        return ("scissors")
+    }
+    else if (hc !== "rock" || hc !== "paper" || hc !== "scissors") {
+        console.log("try a valid option")
+        return "null"
+    }
+}
+
 let buttons = document.querySelectorAll('.button');
 
 buttons.forEach(btn =>{
 btn.addEventListener('click', (event) => {
+    const computerChoice = getComputerChoice()
     if (event.target.id === 'rock') {
-        const computerChoice = getComputerChoice();
         console.log('Computer chose:', computerChoice);
-        console.log('rock was clicked');
+        console.log('User chose:', event.target.id);
         } 
     else if (event.target.id === 'paper') {
-        const computerChoice = getComputerChoice();
         console.log('Computer chose:', computerChoice);
-        console.log('paper was clicked');
+        console.log('User chose:', event.target.id);
         } 
     else if (event.target.id === 'scissors') {
-        const computerChoice = getComputerChoice();
         console.log('Computer chose:', computerChoice);
-        console.log('scissors was clicked');
+        console.log('User chose:', event.target.id);
         }
+
+    if
+    ((event.target.id === 'rock' && computerChoice === 'scissors') ||
+    (event.target.id === 'paper' && computerChoice === 'rock') ||
+    (event.target.id === 'scissors' && computerChoice === 'paper')){
+        console.log("Victory. Human chose", event.target.id, "over CPU's", computerChoice)
+    }
+    else if (event.target.id === computerChoice){
+        console.log ("That is a tie")
+    }
+    else {
+        console.log ('You lose. CPU chose', computerChoice, "over human's", event.target.id)
+    }
     })
 })
