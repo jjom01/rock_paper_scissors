@@ -11,25 +11,6 @@ function getComputerChoice () {
         }
 }
 
-function getHumanChoice (){
-    if (hc === "rock"){
-        console.log("you picked ROCK")
-        return ("rock")
-    }
-    else if (hc === "paper"){
-        console.log("you picked PAPER")
-        return ("paper")
-    }
-    else if (hc === "scissors"){
-        console.log("you picked SCISSORS")
-        return ("scissors")
-    }
-    else if (hc !== "rock" || hc !== "paper" || hc !== "scissors") {
-        console.log("try a valid option")
-        return "null"
-    }
-}
-
 let buttons = document.querySelectorAll('.button');
 
 buttons.forEach(btn =>{
