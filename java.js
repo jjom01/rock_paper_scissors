@@ -48,6 +48,10 @@ btn.addEventListener('click', (event) => {
         console.log ("That is a tie")
     }
     else {
+        const msgL = document.createElement('p');
+        msgL.textContent = `You lost this one, ${computerChoice} beats ${event.target.id}.`;
+        msgL.style.fontFamily = 'PP Fraktion Mono', 'monospace';
+        msgWTL.appendChild(msgL);
         console.log ('You lose. CPU chose', computerChoice, "over human's", event.target.id)
     }
     })
