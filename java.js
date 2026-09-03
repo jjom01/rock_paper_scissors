@@ -12,6 +12,7 @@ function getComputerChoice () {
 }
 
 let buttons = document.querySelectorAll('.button');
+let msgWTL = document.querySelector('.player_track')
 
 buttons.forEach(btn =>{
 btn.addEventListener('click', (event) => {
@@ -36,6 +37,10 @@ btn.addEventListener('click', (event) => {
         console.log("Victory. Human chose", event.target.id, "over CPU's", computerChoice)
     }
     else if (event.target.id === computerChoice){
+        const msgT = document.createElement('p');
+        msgT.textContent = "That is a tie";
+        msgT.style.fontFamily = 'PP Fraktion Mono', 'monospace';
+        msgWTL.appendChild(msgT);
         console.log ("That is a tie")
     }
     else {
