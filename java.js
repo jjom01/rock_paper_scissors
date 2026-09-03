@@ -34,6 +34,10 @@ btn.addEventListener('click', (event) => {
     ((event.target.id === 'rock' && computerChoice === 'scissors') ||
     (event.target.id === 'paper' && computerChoice === 'rock') ||
     (event.target.id === 'scissors' && computerChoice === 'paper')){
+        const msgW = document.createElement('p');
+        msgW.textContent = `You win this one, ${event.target.id} beats ${computerChoice}.`;
+        msgW.style.fontFamily = 'PP Fraktion Mono', 'monospace';
+        msgWTL.appendChild(msgW);
         console.log("Victory. Human chose", event.target.id, "over CPU's", computerChoice)
     }
     else if (event.target.id === computerChoice){
