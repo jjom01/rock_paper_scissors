@@ -12,7 +12,7 @@ function getComputerChoice () {
 }
 
 let buttons = document.querySelectorAll('.button');
-let msgWTL = document.querySelector('.player_track')
+let msgWTL = document.querySelector('.player_info')
 
 buttons.forEach(btn =>{
 btn.addEventListener('click', (event) => {
@@ -35,6 +35,7 @@ btn.addEventListener('click', (event) => {
     (event.target.id === 'paper' && computerChoice === 'rock') ||
     (event.target.id === 'scissors' && computerChoice === 'paper')){
         const msgW = document.createElement('p');
+        msgW.id = 'win'
         msgW.textContent = `You win this one, ${event.target.id} beats ${computerChoice}.`;
         msgW.style.fontFamily = 'PP Fraktion Mono', 'monospace';
         msgWTL.appendChild(msgW);
@@ -42,6 +43,7 @@ btn.addEventListener('click', (event) => {
     }
     else if (event.target.id === computerChoice){
         const msgT = document.createElement('p');
+        msgT.id = 'tie'
         msgT.textContent = "That is a tie";
         msgT.style.fontFamily = 'PP Fraktion Mono', 'monospace';
         msgWTL.appendChild(msgT);
@@ -49,6 +51,7 @@ btn.addEventListener('click', (event) => {
     }
     else {
         const msgL = document.createElement('p');
+        msgL.id = 'lose'
         msgL.textContent = `You lost this one, ${computerChoice} beats ${event.target.id}.`;
         msgL.style.fontFamily = 'PP Fraktion Mono', 'monospace';
         msgWTL.appendChild(msgL);
