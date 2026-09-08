@@ -14,10 +14,7 @@ function getComputerChoice () {
 let buttons = document.querySelectorAll('.button');
 let msgWTL = document.querySelector('.player_info');
 
-const msgW = document.createElement('p');
-const msgT = document.createElement('p');
-const msgL = document.createElement('p');
-
+const msg = document.createElement('p');
 
 buttons.forEach(btn =>{
 btn.addEventListener('click', (event) => {
@@ -26,27 +23,27 @@ btn.addEventListener('click', (event) => {
     ((event.target.id === 'rock' && computerChoice === 'scissors') ||
     (event.target.id === 'paper' && computerChoice === 'rock') ||
     (event.target.id === 'scissors' && computerChoice === 'paper')){
-        msgW.id = 'win'
-        msgW.textContent = `You win this one, ${event.target.id} beats ${computerChoice}.`;
-        msgW.style.fontFamily = 'PP Fraktion Mono', 'monospace';
-        msgW.style.textAlign = 'center'
-        msgWTL.appendChild(msgW);
+        msg.id = 'win'
+        msg.textContent = `You win this one, ${event.target.id} beats ${computerChoice}.`;
+        msg.style.fontFamily = 'PP Fraktion Mono', 'monospace';
+        msg.style.textAlign = 'center'
+        msgWTL.appendChild(msg);
         console.log("Victory. Human chose", event.target.id, "over CPU's", computerChoice)
     }
     else if (event.target.id === computerChoice){
-        msgT.id = 'tie'
-        msgT.textContent = "That is a tie";
-        msgT.style.fontFamily = 'PP Fraktion Mono', 'monospace';
-        msgT.style.textAlign = 'center'
-        msgWTL.appendChild(msgT);
+        msg.id = 'tie'
+        msg.textContent = "That is a tie";
+        msg.style.fontFamily = 'PP Fraktion Mono', 'monospace';
+        msg.style.textAlign = 'center'
+        msgWTL.appendChild(msg);
         console.log ("That is a tie")
     }
     else {
-        msgL.id = 'lose'
-        msgL.textContent = `You lost this one, ${computerChoice} beats ${event.target.id}.`;
-        msgL.style.fontFamily = 'PP Fraktion Mono', 'monospace';
-        msgL.style.textAlign = 'center'
-        msgWTL.appendChild(msgL);
+        msg.id = 'lose'
+        msg.textContent = `You lost this one, ${computerChoice} beats ${event.target.id}.`;
+        msg.style.fontFamily = 'PP Fraktion Mono', 'monospace';
+        msg.style.textAlign = 'center'
+        msgWTL.appendChild(msg);
         console.log ('You lose. CPU chose', computerChoice, "over human's", event.target.id)
     }
 
