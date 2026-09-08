@@ -12,11 +12,44 @@ function getComputerChoice () {
 }
 
 let buttons = document.querySelectorAll('.button');
-let msgWTL = document.querySelector('.player_info')
+let msgWTL = document.querySelector('.player_info');
+
+const msgW = document.createElement('p');
+const msgT = document.createElement('p');
+const msgL = document.createElement('p');
+
 
 buttons.forEach(btn =>{
 btn.addEventListener('click', (event) => {
     const computerChoice = getComputerChoice()
+    if
+    ((event.target.id === 'rock' && computerChoice === 'scissors') ||
+    (event.target.id === 'paper' && computerChoice === 'rock') ||
+    (event.target.id === 'scissors' && computerChoice === 'paper')){
+        msgW.id = 'win'
+        msgW.textContent = `You win this one, ${event.target.id} beats ${computerChoice}.`;
+        msgW.style.fontFamily = 'PP Fraktion Mono', 'monospace';
+        msgW.style.textAlign = 'center'
+        msgWTL.appendChild(msgW);
+        console.log("Victory. Human chose", event.target.id, "over CPU's", computerChoice)
+    }
+    else if (event.target.id === computerChoice){
+        msgT.id = 'tie'
+        msgT.textContent = "That is a tie";
+        msgT.style.fontFamily = 'PP Fraktion Mono', 'monospace';
+        msgT.style.textAlign = 'center'
+        msgWTL.appendChild(msgT);
+        console.log ("That is a tie")
+    }
+    else {
+        msgL.id = 'lose'
+        msgL.textContent = `You lost this one, ${computerChoice} beats ${event.target.id}.`;
+        msgL.style.fontFamily = 'PP Fraktion Mono', 'monospace';
+        msgL.style.textAlign = 'center'
+        msgWTL.appendChild(msgL);
+        console.log ('You lose. CPU chose', computerChoice, "over human's", event.target.id)
+    }
+
     if (event.target.id === 'rock') {
         console.log('Computer chose:', computerChoice);
         console.log('User chose:', event.target.id);
@@ -29,33 +62,5 @@ btn.addEventListener('click', (event) => {
         console.log('Computer chose:', computerChoice);
         console.log('User chose:', event.target.id);
         }
-
-    if
-    ((event.target.id === 'rock' && computerChoice === 'scissors') ||
-    (event.target.id === 'paper' && computerChoice === 'rock') ||
-    (event.target.id === 'scissors' && computerChoice === 'paper')){
-        const msgW = document.createElement('p');
-        msgW.id = 'win'
-        msgW.textContent = `You win this one, ${event.target.id} beats ${computerChoice}.`;
-        msgW.style.fontFamily = 'PP Fraktion Mono', 'monospace';
-        msgWTL.appendChild(msgW);
-        console.log("Victory. Human chose", event.target.id, "over CPU's", computerChoice)
-    }
-    else if (event.target.id === computerChoice){
-        const msgT = document.createElement('p');
-        msgT.id = 'tie'
-        msgT.textContent = "That is a tie";
-        msgT.style.fontFamily = 'PP Fraktion Mono', 'monospace';
-        msgWTL.appendChild(msgT);
-        console.log ("That is a tie")
-    }
-    else {
-        const msgL = document.createElement('p');
-        msgL.id = 'lose'
-        msgL.textContent = `You lost this one, ${computerChoice} beats ${event.target.id}.`;
-        msgL.style.fontFamily = 'PP Fraktion Mono', 'monospace';
-        msgWTL.appendChild(msgL);
-        console.log ('You lose. CPU chose', computerChoice, "over human's", event.target.id)
-    }
     })
 })
