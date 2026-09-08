@@ -1,3 +1,9 @@
+let buttons = document.querySelectorAll('.button');
+let msgWTL = document.querySelector('.player_info');
+
+const p_name = document.querySelector('.player_name');
+const msg = document.createElement('p');
+
 function getComputerChoice () {
     let num = Math.floor(Math.random() * 9) + 1; 
         if (num <= 3){
@@ -11,10 +17,11 @@ function getComputerChoice () {
         }
 }
 
-let buttons = document.querySelectorAll('.button');
-let msgWTL = document.querySelector('.player_info');
-
-const msg = document.createElement('p');
+function getUserName (){
+    let userName = prompt ("What is your name?", "|");
+    p_name.textContent = userName;
+}
+const new_p_name = getUserName();
 
 buttons.forEach(btn =>{
 btn.addEventListener('click', (event) => {
