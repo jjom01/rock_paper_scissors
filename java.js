@@ -29,7 +29,6 @@ function getUserName (){
     let userName = prompt ("What is your name?", "|");
     p_name.textContent = userName;
 }
-const new_p_name = getUserName();
 
 buttons.forEach(btn =>{
 btn.addEventListener('click', (event) => {
@@ -71,3 +70,5 @@ btn.addEventListener('click', (event) => {
         }
     })
 })
+
+const new_p_name = getUserName();
