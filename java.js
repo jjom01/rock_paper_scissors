@@ -26,7 +26,7 @@ function getComputerChoice () {
 }
 
 function getUserName (){
-    let userName = prompt ("What is your name?", "|");
+    let userName = prompt ("What is your name?", "");
     p_name.textContent = userName;
 }
 
