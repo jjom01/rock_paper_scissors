@@ -8,7 +8,7 @@ const p_name = document.querySelector('.player_name');
 const msg = document.createElement('p');
 
 msg.style.color = 'rgb(239, 230, 216)'
-msg.style.fontFamily = 'PP Fraktion Mono', 'monospace';
+msg.style.fontFamily = '"PP Fraktion Mono", monospace';
 msg.style.textAlign = 'center'
 msg.style.backgroundColor = 'black';
 
